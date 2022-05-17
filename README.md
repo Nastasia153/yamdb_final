@@ -2,7 +2,8 @@
 
 Обзоры и мнения о медиа.
 
-[![Action status](https://github.com/Nastasia153/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)]()
+
+![Action status](https://github.com/Nastasia153/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
 ## Установка
