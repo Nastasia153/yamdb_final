@@ -37,7 +37,7 @@ class Command(BaseCommand):
 
     @transaction.atomic
     def handle(self, *args, **options):
-        MODELS = {
+        models = {
             User: 'users',
             Category: 'category',
             Genre: 'genre',
@@ -47,7 +47,7 @@ class Command(BaseCommand):
             Title.genre.through: 'genre_title'
         }
         try:
-            for model, filebase in MODELS.items():
+            for model, filebase in models.items():
                 self.load_csv(model, f'{filebase}.csv')
         except Exception as error:
             raise CommandError(f'что-то пошло не так. {error}')
