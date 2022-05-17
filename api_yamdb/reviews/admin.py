@@ -1,9 +1,9 @@
+from django import forms
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
-from django import forms
 
-from .models import Category, Genre, Title, Review, Comment, YamdbUser
+from .models import Category, Comment, Genre, Review, Title, YamdbUser
 
 
 @admin.register(YamdbUser)

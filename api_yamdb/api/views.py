@@ -7,24 +7,21 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, mixins, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.exceptions import MethodNotAllowed
-from rest_framework.permissions import (
-    IsAuthenticated, IsAuthenticatedOrReadOnly, AllowAny
-)
+from rest_framework.permissions import (AllowAny, IsAuthenticated,
+                                        IsAuthenticatedOrReadOnly)
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
+from reviews.models import Category, Genre, Review, Title, User
 
-from reviews.models import User, Category, Genre, Title, Review
 from .filters import TitleFilter
-from .permissions import (
-    IsAdminAsDefinedByUserModel, IsAdminUserOrReadOnly,
-    IsAdminOrModeratorOrAuthorOrReadOnly
-)
-from .serializers import (
-    CategorySerializer, CommentSerializer, ReadTitleSerializer,
-    WriteTitleSerializer, ReviewSerializer, GenreSerializer,
-    CurrentUserSerializer, UserSerializer,
-    SignUpSerializer, TokenRequestSerializer,
-)
+from .permissions import (IsAdminAsDefinedByUserModel,
+                          IsAdminOrModeratorOrAuthorOrReadOnly,
+                          IsAdminUserOrReadOnly)
+from .serializers import (CategorySerializer, CommentSerializer,
+                          CurrentUserSerializer, GenreSerializer,
+                          ReadTitleSerializer, ReviewSerializer,
+                          SignUpSerializer, TokenRequestSerializer,
+                          UserSerializer, WriteTitleSerializer)
 from .services import confirmation_email, generate_confirmation_code
 
 

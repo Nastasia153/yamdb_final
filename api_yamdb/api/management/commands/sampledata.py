@@ -6,9 +6,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 from django.db.models import Model
-
-from reviews.models import User, Title, Category, Genre
-from reviews.models import Review, Comment
+from reviews.models import Category, Comment, Genre, Review, Title, User
 
 CSV_DIR = os.path.join(settings.BASE_DIR, 'static/data/')
 
