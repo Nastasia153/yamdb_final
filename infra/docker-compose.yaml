@@ -10,8 +10,7 @@ services:
       - ./.env
 
   web:
-    image: donas/yamdb:latest
-    restart: always
+    image: donas/yamdb:v1.28.04.2022
     volumes:
       - static_value:/app/static/
       - media_value:/app/media/
