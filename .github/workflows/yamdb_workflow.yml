@@ -63,7 +63,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          sudo docker pull donas/yamdb
+          sudo docker pull donas/yamdb:v1.28.04.2022
           sudo docker stop $(sudo docker ps -a -q)
           sudo docker-compose rm web
           touch .env
