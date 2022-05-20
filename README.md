@@ -13,14 +13,8 @@
 ## Использование
 
 Наполнение .env файла
-```
-DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
-DB_NAME=postgres # имя базы данных
-POSTGRES_USER=postgres # логин для подключения к базе данных
-POSTGRES_PASSWORD=postgres153 # пароль для подключения к БД
-DB_HOST=db # название сервиса (контейнера)
-DB_PORT=5432 # порт для подключения к БД
-```
+
+в директории infra, есть шаблон заполнения .env файла.
 ### Запуск docker-compose 
 
 ```
@@ -36,7 +30,7 @@ sudo docker-compose exec web python manage.py createsuperuser
 ```
 - собираем статику:
 ```
-docker-compose exec web python manage.py collectstatic --no-input
+sudo docker-compose exec web python manage.py collectstatic --no-input
 ```
 
 Теперь проект доступен по адресу [http://localhost/api/v1/titles/](http://localhost/api/v1/titles)
